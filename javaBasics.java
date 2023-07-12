@@ -44,7 +44,48 @@ public class javaBasics {
 // System.out.println(sum(3, 4, 5));
 // System.out.println(sum(8,9 ));
 
+// 8. function overloading with datatype
+// System.out.println(sum(3, 5));
+// System.out.println(sum(3.2f, 4.8f));
 
+//9.  check number is prime or not using function
+
+// System.out.println(isPrime(12));
+
+// 10. primeInRange
+// primeInRange(1000);   // 2 to 20 ;
+
+
+// 11. binary to decimal coversions 
+
+// binToDec(1000);
+// decToBin(7);
+
+// 12. hollow_rectangle
+// hollow_rectangle(4, 5);
+
+
+// 13. inverted_rotated_half_pyramid
+// inverted_rotated_half_pyramid(4);
+
+// 14. inverted_rotated_half_pyramid_withNumbers
+// inverted_rotated_half_pyramid_withNumbers(5);
+
+// 15. floyds_triangle
+// floyds_triangle(5);
+
+// 16. zero_one_triangle
+// zero_one_triangle(5);
+
+// 17. butterfly_pattern
+// butterfly_pattern(1000);
+
+// 18.solid_Rhombus
+// solid_Rhombus(5);
+// 19.hollow_rhombus
+// hollow_rhombus(5);
+// 20. Diamond_pattern
+// Diamond_pattern(1000);
 
 
 // --------- printing statements-----------
@@ -837,7 +878,294 @@ public class javaBasics {
 // }
 
 
-     }
+// function->8
+// public static float sum(float a , float b){
+//     return a+b;
+// }
+
+// funtion no- 8
+// public static boolean isPrime(int n ){
+
+    //corner case 
+// if (n==2){
+//     return true;
+// }
+
+//     boolean isPrime = true;
+//     for(int i = 2; i<=n-1; i++){
+//         if(n%i==0){
+//             isPrime = false;
+//             break;
+
+//         }
+//     }
+// return isPrime;
+// }
+
+// function -9
+// public static boolean isPrime(int n){
+//     for(int i = 2; i<=Math.sqrt(n); i++ ){
+//         if(n%i==0){
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+
+// function -10{use isPrime to run this }
+// public static void primeInRange(int n ){
+//     for (int  i =2; i<=n; i++){
+//         if (isPrime(i)){
+//             System.out.println(i+"");
+//         }
+//     }
+//     System.out.println();
+// }
+
+// // funtion no - 11
+// public static void binToDec(int binNum){
+//     int myNum= binNum;
+//     int pow = 0;
+//     int decNum= 0;
+//     while (binNum>0){
+//         int  lasDigit = binNum % 10;
+//         decNum = decNum +(lasDigit*(int) Math.pow(2, pow));
+//         pow++;
+//         binNum = binNum/10;
+
+    
+    
+//     }
+
+//     System.out.println("decimal of "+myNum + " = " +decNum);
+// }
+
+
+
+
+
+// funtion-12
+// public static void decToBin(int n ){
+//     int myNum = n;
+//     int pow= 0;
+//     int binNum = 0;
+
+//     while(n>0){
+//         int rem = n%2;
+//         binNum = binNum + (rem*(int ) Math.pow(10,pow));
+//         pow++;
+//         n=n/2;
+//     }
+//     System.out.println("binary form of " +myNum + "=" +binNum);
+// }
+
+
+// ------------------------------------ Advance pattern problem---------------------------
+
+// 1. Hollow Rectangle Pattern 
+// public static void hollow_rectangle(int totRows, int totCols) {
+//     // outer loop 
+//     for (int i = 1; i <= totRows; i++) {
+//         for (int j = 1; j <= totCols; j++) {
+//             if (i == 1 || i == totRows || j == 1 || j == totCols) {
+//                 System.out.print("*");
+//             } else {
+//                 System.out.print(" ");
+//             }
+//         }
+//         System.out.println();
+//     }
+// }
+
+
+// 2. inverted rotated pyramid
+// public static void inverted_rotated_half_pyramid(int n){
+//     // outer 
+//     for (int i = 1; i<=n; i ++){
+//         for(int j=1; j<=n-1; j++){
+//             System.out.print("");
+//         }
+
+//         // stars
+//         for (int j = 1; j<=i; j++){
+//             System.out.print("*");
+//         }
+//         System.out.println();
+//     }
+// }
+
+// 3.inverted_rotated_half_pyramid_withNumbers
+// public static void inverted_rotated_half_pyramid_withNumbers(int n) {
+//     for (int i = 1; i <= n; i++) {
+//         for (int j = 1; j <= n - i + 1; j++) {
+//             System.out.print(j + " ");
+//         }
+//         System.out.println();
+//     }
+// }
+
+
+// 4. floyd's Triangle
+// public static void floyds_triangle (int n ){
+//     // outer loop 
+//     int counter = 1; 
+//     for (int i = 1;  i<=n ; i++){
+//         // inner loop - how many times will counter be printed 
+//         for (int  j =1 ; j<=i ; j++)
+//         {
+//             System.out.print(counter + " ");
+//             counter++;
+//         }
+
+//         System.out.println();
+//     }
+// }
+
+
+// 5. zero_one_triangle
+// public static void zero_one_triangle(int n){
+//     for (int i =1; i<=n ; i++){
+//         for(int j =1; j<=i; j++){
+//             if ((i+j)%2==0){
+//                 System.out.print("1");
+//             }else{
+//                 System.out.print("0");
+//             }
+//         }
+
+//         System.out.println();
+//     }
+// }
+
+// // 5. butterfly_pattern
+// public static void butterfly_pattern(int n) {
+//     // 1st half
+//     for (int i = 1; i <= n; i++) {
+//         for (int j = 1; j <= i; j++) {
+//             System.out.print("*");
+//         }
+
+//         // spaces - 2*(n-i)
+//         for (int j = 1; j <= 2 * (n - i); j++) {
+//             System.out.print(" ");
+//         }
+
+//         // stars - i
+//         for (int j = 1; j <= i; j++) {
+//             System.out.print("*");
+//         }
+
+//         System.out.println(); // move to the next line
+//     }
+
+//     // 2nd half
+//     for (int i = n; i >= 1; i--) {
+//         for (int j = 1; j <= i; j++) {
+//             System.out.print("*");
+//         }
+
+//         // spaces - 2*(n-i)
+//         for (int j = 1; j <= 2 * (n - i); j++) {
+//             System.out.print(" ");
+//         }
+
+//         // stars - i
+//         for (int j = 1; j <= i; j++) {
+//             System.out.print("*");
+//         }
+
+//         System.out.println(); // move to the next line
+//     }
+// }
+
+
+// solid RHombus
+
+// public static void solid_Rhombus(int n) {
+//     for (int i = 1; i <= n; i++) {
+//         // spaces
+//         for (int j = 1; j <= (n - i); j++) {
+//             System.out.print(" ");
+//         }
+
+//         // stars
+//         for (int j = 1; j <= n; j++) {
+//             System.out.print("*");
+//         }
+
+//         System.out.println();
+//     }
+// }
+
+
+// // hollow_rhombus
+// public static void hollow_rhombus(int n) {
+//     for (int i = 1; i <= n; i++) {
+//         // spaces
+//         for (int j = 1; j <= (n - i); j++) {
+//             System.out.print(" ");
+//         }
+
+//         // hollow rhombus
+//         for (int j = 1; j <= n; j++) {
+//             if (i == 1 || i == n || j == 1 || j == n) {
+//                 System.out.print("*");
+//             } else {
+//                 System.out.print(" ");
+//             }
+//         }
+
+//         System.out.println();
+//     }
+// }
+
+
+
+// public static void Diamond_pattern(int n) {
+//     // 1st half
+//     for (int i = 1; i <= n; i++) {
+//         for (int j = 1; j <= (n - i); j++) {
+//             System.out.print(" ");
+//         }
+
+//         // stars
+//         for (int j = 1; j <= (2 * i) - 1; j++) {
+//             System.out.print("*");
+//         }
+
+//         System.out.println();
+//     }
+
+//     // 2nd half
+//     for (int i = n - 1; i >= 1; i--) {
+//         for (int j = 1; j <= (n - i); j++) {
+//             System.out.print(" ");
+//         }
+
+//         // stars
+//         for (int j = 1; j <= (2 * i) - 1; j++) {
+//             System.out.print("*");
+//         }
+
+//         System.out.println();
+//     }
+// }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+     
 
 
 
